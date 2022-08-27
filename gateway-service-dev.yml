@@ -13,10 +13,6 @@ spring:
           uri: http://localhost:8084/ #URL donde se hará el redirect segun el predicate definido
           predicates: #RReglas de análisis de una request
             - Path=/catalogs/**
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
       
 management:
   endpoints:
