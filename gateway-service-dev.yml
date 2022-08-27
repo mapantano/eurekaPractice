@@ -15,6 +15,9 @@ spring:
             - Path=/catalogs/**
       
 management:
+  info:
+    env:
+      enabled: true
   endpoints:
     web:
       exposure:
