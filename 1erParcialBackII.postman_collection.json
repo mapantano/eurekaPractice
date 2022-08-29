@@ -12,11 +12,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}movies/Action",
+					"raw": "http://localhost:8080/movies/Action",
+					"protocol": "http",
 					"host": [
-						"{{url}}movies"
+						"localhost"
 					],
+					"port": "8080",
 					"path": [
+						"movies",
 						"Action"
 					]
 				}
@@ -29,11 +32,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}catalogs/Musical",
+					"raw": "http://localhost:8080/catalogs/Musical",
+					"protocol": "http",
 					"host": [
-						"{{url}}catalogs"
+						"localhost"
 					],
+					"port": "8080",
 					"path": [
+						"catalogs",
 						"Musical"
 					]
 				}
@@ -61,7 +67,87 @@
 			"response": []
 		},
 		{
+			"name": "actuator info port:8080",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actuator info port:8761",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8761/actuator/info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8761",
+					"path": [
+						"actuator",
+						"info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "actuator health port:8888",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/actuator/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"actuator",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actuator health port:8080",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actuator health port:8761",
 			"request": {
 				"method": "GET",
 				"header": [],
