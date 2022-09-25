@@ -9,20 +9,10 @@ spring:
           uri: lb://movie-service #URL donde se hará el redirect segun el predicate definido
           predicates: #RReglas de análisis de una request
             - Path=/movies/**
-          filters:
-            - name: CircuitBreaker
-              args:
-                name: moviesService
-                fallbackUri: forward:/fallback/movies
         - id: catalogRoute #Identificando la ruta del service de producto
           uri: lb://catalog-service #URL donde se hará el redirect segun el predicate definido
           predicates: #RReglas de análisis de una request
             - Path=/catalogs/**
-          filters:
-            - name: CircuitBreaker
-              args:
-                name: catalogService
-                fallbackUri: forward:/fallback/catalogs
             
 management:
   info:
