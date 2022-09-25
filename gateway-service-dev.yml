@@ -6,7 +6,7 @@ spring:
     gateway:
       routes:
         - id: movieRoute #Identificando la ruta del service de producto
-          uri: lb://movie-service #URL donde se hará el redirect segun el predicate definido
+          uri: http://localhost:8082/ #URL donde se hará el redirect segun el predicate definido
           predicates: #RReglas de análisis de una request
             - Path=/movies/**
           filters:
@@ -15,7 +15,7 @@ spring:
                 name: movieService
                 fallbackUri: forward:/fallback/movies
         - id: catalogRoute #Identificando la ruta del service de producto
-          uri: lb://catalog-service #URL donde se hará el redirect segun el predicate definido
+          uri: http://localhost:8084/ #URL donde se hará el redirect segun el predicate definido
           predicates: #RReglas de análisis de una request
             - Path=/catalogs/**
           filters:
@@ -24,9 +24,17 @@ spring:
                 name: catalogService
                 fallbackUri: forward:/fallback/catalogs
       
-
+management:
+  info:
+    env:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health,info,gateway
+        
 info:
   app:
-    name: ${spring.application.name}
+    name: gateway-service
     description: Gateway Service
     version: 1.0.0
