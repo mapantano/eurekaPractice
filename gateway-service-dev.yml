@@ -15,6 +15,10 @@ spring:
           uri: lb://catalog-service #URL donde se hará el redirect segun el predicate definido
           predicates: #RReglas de análisis de una request
             - Path=/catalogs/**
+        - id: serieRoute
+          uri: lb://serie-service
+          predicates:
+            - Path=/series/**
             
 management:
   info:
